@@ -1,0 +1,1 @@
+require 'almost_happy'

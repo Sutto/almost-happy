@@ -10,8 +10,11 @@ begin
     gem.email = "sutto@sutto.net"
     gem.homepage = "http://github.com/Sutto/almost-happy"
     gem.authors = ["Darcy Laycock"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency "activerecord", ">= 3.0.0.beta3"
+    gem.add_dependency "RedCloth"
+    gem.add_dependency "rdiscount"
+    gem.add_dependency "nokogiri"
+    gem.add_development_dependency "shoulda", ">= 0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

@@ -11,9 +11,9 @@ module AlmostHappy
         self.convertable_fields += fields
         # Define accessors for each field.
         fields.each do |field|
-          define_method(:"#{field}_as_html") { send(field).to_s.html_save }
+          define_method(:"#{field}_as_html") { send(field).to_s.html_safe }
         end
-        validate_convertable_format if options[:validate]
+        validate_convertable_format if options.fetch(:validate, true)
       end
       
       def is_publishable

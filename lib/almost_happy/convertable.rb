@@ -13,6 +13,7 @@ module AlmostHappy
     module ClassMethods
       
       def validate_convertable_format
+        validates_presence_of :format
         validates_with AlmostHappy::FormatValidator
       end
       

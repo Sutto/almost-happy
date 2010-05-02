@@ -8,11 +8,14 @@ module AlmostHappy
   
   extend ActiveSupport::Autoload
   
-  autoload :Convertable
-  autoload :Convertor
-  autoload :Scopeable
   autoload :ActiveRecordMixin
+  
+  autoload :Convertor
   autoload :FormatValidator
+  
+  autoload :Convertable
+  autoload :Scopeable
+  autoload :Publishable
   
   ::ActiveRecord::Base.send :include, ActiveRecordMixin if defined?(::ActiveRecord::Base)
   

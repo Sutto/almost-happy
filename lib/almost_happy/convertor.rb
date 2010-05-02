@@ -39,7 +39,7 @@ module AlmostHappy
     end
     
     def self.format_names
-      self.renderers.map { |r| r.human_name }.to_sentence
+      self.renderers.values.map { |r| r.human_name }.to_sentence :two_words_connector => " or ", :last_word_connector => ", or "
     end
 
     def self.[](key)

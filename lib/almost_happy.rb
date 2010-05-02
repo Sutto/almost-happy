@@ -6,6 +6,8 @@ require 'active_support/concern'
 module AlmostHappy
   VERSION = '0.1.0'.freeze
   
+  extend ActiveSupport::Autoload
+  
   autoload :Convertable
   autoload :Convertor
   autoload :Scopeable

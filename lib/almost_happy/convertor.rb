@@ -85,7 +85,7 @@ module AlmostHappy
     end
 
     add_renderer :markdown, :filters => [:smart, :autolink] do |raw|
-      html = RDiscount.new(raw, *ContentRenderer[:markdown].fetch(:filters, [])).to_html
+      html = RDiscount.new(raw, *Convertor[:markdown].fetch(:filters, [])).to_html
       html.gsub!(/^(?:<p>)?@@@(?:<\/p>)?$/, '</div>')
       html.gsub!(/^(?:<p>)?@@@\s*([\w\+]+)(?:<\/p>)?$/, '<div class="code" rel="\1">')
       Albino.highlight_code(html)

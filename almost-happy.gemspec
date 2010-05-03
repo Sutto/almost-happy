@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{almost-happy}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Darcy Laycock"]
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
      "lib/almost_happy/format_validator.rb",
      "lib/almost_happy/publishable.rb",
      "lib/almost_happy/scopeable.rb",
+     "lib/vendor/albino.rb",
      "test/helper.rb",
      "test/test_almost-happy.rb"
   ]

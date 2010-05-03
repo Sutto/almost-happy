@@ -1,3 +1,9 @@
+require 'nokogiri'
+require 'RedCloth'
+require 'rdiscount'
+
+require File.expand_path('../vendor/albino', File.dirname(__FILE__))
+
 module AlmostHappy
   class Convertor
     

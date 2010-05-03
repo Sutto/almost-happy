@@ -13,13 +13,16 @@ Gem::Specification.new do |s|
   s.description = %q{Helpers, convertors etc for Rails 3 to make page / post models for simple cases simple}
   s.email = %q{sutto@sutto.net}
   s.extra_rdoc_files = [
-    "LICENSE"
+    "LICENSE",
+     "README.md"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
+     "README.md",
      "Rakefile",
+     "almost-happy.gemspec",
      "lib/almost-happy.rb",
      "lib/almost_happy.rb",
      "lib/almost_happy/active_record_mixin.rb",

@@ -16,6 +16,7 @@ begin
     gem.add_dependency "RedCloth"
     gem.add_dependency "rdiscount"
     gem.add_dependency "nokogiri"
+    gem.add_dependency "open4" # For albino
     gem.add_development_dependency "shoulda", ">= 0"
   end
   Jeweler::GemcutterTasks.new

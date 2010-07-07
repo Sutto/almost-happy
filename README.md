@@ -33,8 +33,9 @@ using the specific format etc.
 
 When a model is marked as publishable, it provides the following instance methods:
 
-* `published?` - returns a boolean indicating if it's publishe
+* `published?` - returns a boolean indicating if it's published. also aliased to `published` for forms.
 * `publish!` - mark the post as published right now.
+* `published=(value)` - mark items as published in forms.
 
 And, the following class methods:
 

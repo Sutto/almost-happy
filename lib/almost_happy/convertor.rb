@@ -94,6 +94,6 @@ module AlmostHappy
     add_renderer :raw do |raw|
       Albino.highlight_code(raw.to_s)
     end
-    
+
   end
 end

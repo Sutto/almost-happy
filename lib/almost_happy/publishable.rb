@@ -11,7 +11,11 @@ module AlmostHappy
         else
           value = value.present? && !["0", "false"].include?(value.to_s)
         end
-        self.published_at = (value ? Time.now : nil) 
+        if !published_at? && value
+          self.published_at = value
+        elsif published_at? && !value
+          self.published_at = nil
+        end
       end
 
       def published?

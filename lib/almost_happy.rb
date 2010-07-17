@@ -4,7 +4,7 @@ require 'active_support/core_ext/class/attribute'
 require 'active_support/concern'
 
 module AlmostHappy
-  VERSION = '0.2.2'.freeze
+  VERSION = '0.2.3'.freeze
 
   extend ActiveSupport::Autoload
 

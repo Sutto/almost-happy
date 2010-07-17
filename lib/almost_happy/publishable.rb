@@ -12,7 +12,7 @@ module AlmostHappy
           value = value.present? && !["0", "false"].include?(value.to_s)
         end
         if !published_at? && value
-          self.published_at = value
+          self.published_at = Time.now
         elsif published_at? && !value
           self.published_at = nil
         end

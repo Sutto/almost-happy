@@ -72,7 +72,7 @@ module AlmostHappy
     end
 
     def to_html
-      conversion_from = @object.format rescue nil
+      conversion_from = @object.send(:format_for, @source_field) rescue nil
       self.class.render_for(conversion_from, original_content)
     end
 

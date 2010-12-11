@@ -42,9 +42,16 @@
 #         GitHub // http://github.com
 #
 require 'open4'
+require 'net/http'
+require 'uri'
+require 'tempfile'
 
 class Albino
-  @@bin = Rails.env.development? ? 'pygmentize' : '/usr/bin/pygmentize'
+  @@bin = (defined?(Rails.env) && Rails.env.development?) ? 'pygmentize' : '/usr/bin/pygmentize'
+  
+  @@use_web_api = false
+  
+  WEB_API_ROOT = URI.parse('http://pygments.appspot.com/')
 
   def self.highlight_code(html)
     doc = Nokogiri::HTML(html)
@@ -65,6 +72,14 @@ class Albino
   def self.bin=(path)
     @@bin = path
   end
+  
+  def self.use_web_api?
+    @@use_web_api
+  end
+  
+  def self.use_web_api=(value)
+    @@use_web_api = !!value
+  end
 
   def self.colorize(*args)
     new(*args).colorize
@@ -73,6 +88,7 @@ class Albino
   def initialize(target, lexer = :text, format = :html)
     @target  = File.exists?(target) ? File.read(target) : target rescue target
     @options = { :l => lexer, :f => format }
+    @web_options = {'lang' => lexer.to_s}
   end
 
   def execute(command)
@@ -84,9 +100,18 @@ class Albino
   ensure
     tmp.unlink if tmp
   end
+  
+  def highlight_via_api
+    request = Net::HTTP.post_form(WEB_API_ROOT, @web_options.merge('code' => @target))
+    request.body
+  end
 
   def colorize(options = {})
-    execute @@bin + convert_options(options)
+    if self.class.use_web_api?
+      highlight_via_api
+    else
+      execute @@bin + convert_options(options)
+    end
   end
   alias_method :to_s, :colorize
 

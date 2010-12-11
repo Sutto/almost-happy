@@ -7,6 +7,10 @@ require File.expand_path('../vendor/albino', File.dirname(__FILE__))
 module AlmostHappy
   class Convertor
     
+    def self.use_web_api!
+      Albino.use_web_api = true
+    end
+    
     class Renderer < Struct.new(:name, :options, :renderer)
 
       def [](key)

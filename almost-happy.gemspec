@@ -5,44 +5,42 @@
 
 Gem::Specification.new do |s|
   s.name = %q{almost-happy}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Darcy Laycock"]
-  s.date = %q{2010-07-18}
+  s.date = %q{2010-12-11}
   s.description = %q{Helpers, convertors etc for Rails 3 to make page / post models for simple cases simple}
   s.email = %q{sutto@sutto.net}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.md"
+    "README.md"
   ]
   s.files = [
     ".document",
-     ".gitignore",
-     "LICENSE",
-     "README.md",
-     "Rakefile",
-     "almost-happy.gemspec",
-     "lib/almost-happy.rb",
-     "lib/almost_happy.rb",
-     "lib/almost_happy/active_record_mixin.rb",
-     "lib/almost_happy/convertable.rb",
-     "lib/almost_happy/convertor.rb",
-     "lib/almost_happy/format_validator.rb",
-     "lib/almost_happy/publishable.rb",
-     "lib/almost_happy/scopeable.rb",
-     "lib/vendor/albino.rb",
-     "test/helper.rb",
-     "test/test_almost-happy.rb"
+    "LICENSE",
+    "README.md",
+    "Rakefile",
+    "almost-happy.gemspec",
+    "lib/almost-happy.rb",
+    "lib/almost_happy.rb",
+    "lib/almost_happy/active_record_mixin.rb",
+    "lib/almost_happy/convertable.rb",
+    "lib/almost_happy/convertor.rb",
+    "lib/almost_happy/format_validator.rb",
+    "lib/almost_happy/publishable.rb",
+    "lib/almost_happy/scopeable.rb",
+    "lib/vendor/albino.rb",
+    "test/helper.rb",
+    "test/test_almost-happy.rb"
   ]
   s.homepage = %q{http://github.com/Sutto/almost-happy}
-  s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simple tools for AR + Rails 3 to help make managing your content easy}
   s.test_files = [
     "test/helper.rb",
-     "test/test_almost-happy.rb"
+    "test/test_almost-happy.rb"
   ]
 
   if s.respond_to? :specification_version then

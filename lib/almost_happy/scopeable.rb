@@ -5,19 +5,19 @@ module AlmostHappy
     module ClassMethods
 
       def published
-        where 'published_at IS NOT NULL AND published_at <= ?', Time.now
+        where "#{quoted_table_name}.published_at IS NOT NULL AND #{quoted_table_name}.published_at <= ?", Time.now
       end
 
       def unpublished
-        where 'published_at IS NULL OR published_at > ?', Time.now
+        where "#{quoted_table_name}.published_at IS NULL OR #{quoted_table_name}.published_at > ?", Time.now
       end
 
       def ordered
-        order 'published_at DESC'
+        order "#{quoted_table_name}.published_at DESC"
       end
 
       def ordered_for_preview
-        order '(published_at IS NULL) DESC, published_at DESC'
+        order "(#{quoted_table_name}.published_at IS NULL) DESC, #{quoted_table_name}.published_at DESC"
       end
 
     end

@@ -1,4 +1,4 @@
-require File.expand_path('lib/almost_happy', File.dirname(__FILE__))
+require File.expand_path('./lib/almost_happy', File.dirname(__FILE__))
 
 Gem::Specification.new do |s|
 

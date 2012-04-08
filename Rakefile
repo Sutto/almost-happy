@@ -5,19 +5,7 @@ require 'lib/almost_happy'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name        = "almost-happy"
-    gem.summary     = %Q{Simple tools for AR + Rails 3 to help make managing your content easy}
-    gem.description = %Q{Helpers, convertors etc for Rails 3 to make page / post models for simple cases simple}
-    gem.email       = "sutto@sutto.net"
-    gem.homepage    = "http://github.com/Sutto/almost-happy"
-    gem.authors     = ["Darcy Laycock"]
-    gem.version     = AlmostHappy::VERSION
-    gem.add_dependency "activerecord", ">= 3.0.0.beta3"
-    gem.add_dependency "RedCloth"
-    gem.add_dependency "rdiscount"
-    gem.add_dependency "nokogiri"
-    gem.add_dependency "open4" # For albino
-    gem.add_development_dependency "shoulda", ">= 0"
+    
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
